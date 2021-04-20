@@ -64,6 +64,7 @@ public class TestPlayerTest {
         String playerName = "Bob";
         PlayerTest player = new PlayerTest();
         player.setPlayerName(playerName);
+        System.out.println("Test: instance created, Bob set & retrieved");
         assertEquals("Bob NOT returned", playerName, player.getPlayerName());
     }
     
@@ -72,12 +73,10 @@ public class TestPlayerTest {
     //   Create 2nd instance initialized to Nancy, retrieve & verify Nancy returned
     @Test
     public void playerTesterInitializedConstructor() {
-        String playerName = "Bob";
-        PlayerTest player = new PlayerTest();
-        player.setPlayerName(playerName);
-        assertEquals("Bob NOT returned", playerName, player.getPlayerName());
+        playerTester();
         
         PlayerTest player2 = new PlayerTest("Nancy");
+        System.out.println("Test: 2nd instance created, Nancy initialized & retrieved, as well as Bob\n");
         assertEquals("Nancy NOT returned", "Nancy", player2.getPlayerName());
     }
     
@@ -90,10 +89,12 @@ public class TestPlayerTest {
         
         PlayerTest player = new PlayerTest();
         player.setPlayerName(playerName24Char);
+        System.out.println("\nTest: Verifying 24 char names accepted");
         assertEquals("24 character name NOT accepted", playerName24Char, player.getPlayerName());
         
         
         player.setPlayerName(playerName25Char);
+        System.out.println("Test: Verifying 25 char names truncated\n");
         assertNotEquals("25 character name accepted (should truncate to 24", playerName25Char, player.getPlayerName());
         assertEquals("name different, but not truncated", playerName24Char, player.getPlayerName());
         // 
