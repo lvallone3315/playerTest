@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Test Driven Development Demo for a basic player class
  */
 package playertest;
 
@@ -64,6 +62,7 @@ public class TestPlayerTest {
         String playerName = "Bob";
         PlayerTest player = new PlayerTest();
         player.setPlayerName(playerName);
+        System.out.println("Test: instance created, Bob set & retrieved");
         assertEquals("Bob NOT returned", playerName, player.getPlayerName());
     }
     
@@ -72,13 +71,11 @@ public class TestPlayerTest {
     //   Create 2nd instance initialized to Nancy, retrieve & verify Nancy returned
     @Test
     public void playerTesterInitializedConstructor() {
-        String playerName = "Bob";
-        PlayerTest player = new PlayerTest();
-        player.setPlayerName(playerName);
-        assertEquals("Bob NOT returned", playerName, player.getPlayerName());
+        playerTester();
         
         // PlayerTest player2 = new PlayerTest("Nancy");
-        // assertEquals("Nancy NOT returned", "Nancy", player2.getPlayerName());
+        System.out.println("Test: 2nd instance created, Nancy initialized & retrieved, as well as Bob\n");
+        assertEquals("Nancy NOT returned", "Nancy", player2.getPlayerName());
     }
     
     // Next test names limited to 24 characters
@@ -90,13 +87,17 @@ public class TestPlayerTest {
         
         PlayerTest player = new PlayerTest();
         player.setPlayerName(playerName24Char);
+        System.out.println("\nTest: Verifying 24 char names accepted");
         assertEquals("24 character name NOT accepted", playerName24Char, player.getPlayerName());
         
         
-        // player.setPlayerName(playerName25Char);
+        player.setPlayerName(playerName25Char);
+        System.out.println("Test: Verifying 25 char names truncated\n");
         assertNotEquals("25 character name accepted (should truncate to 24", playerName25Char, player.getPlayerName());
         assertEquals("name different, but not truncated", playerName24Char, player.getPlayerName());
         // 
         
     }
+    
+    // Test default name is '?'
 }
