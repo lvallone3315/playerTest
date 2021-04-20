@@ -16,36 +16,14 @@ import static org.junit.Assert.*;
  */
 public class TestPlayerTest {
     
-    public TestPlayerTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    
     /*
+     *                    Player Class
      * Requirements
      *   Unlimited” number of players
      *   Name limited to 24 characters, additional characters truncated
      *   If no name entered, default name is ?
      *   Names - Spaces allowed
-     *   Names – Other non-printables okay, but expect newlines to be removed prior to calling
+     *
      * Design
      *   Player class
      *   PlayerTest()  - constructor uninitialized
@@ -60,8 +38,10 @@ public class TestPlayerTest {
     @Test
     public void playerTester() {
         String playerName = "Bob";
-        PlayerTest player = new PlayerTest();
+        
+        PlayerTest player = new PlayerTest();  
         player.setPlayerName(playerName);
+        
         System.out.println("Test: instance created, Bob set & retrieved");
         assertEquals("Bob NOT returned", playerName, player.getPlayerName());
     }
@@ -74,6 +54,7 @@ public class TestPlayerTest {
         playerTester();
         
         // PlayerTest player2 = new PlayerTest("Nancy");
+        
         System.out.println("Test: 2nd instance created, Nancy initialized & retrieved, as well as Bob\n");
         assertEquals("Nancy NOT returned", "Nancy", player2.getPlayerName());
     }
@@ -85,19 +66,22 @@ public class TestPlayerTest {
         String playerName25Char = "123456789x123456789y12345";
         String playerName24Char = "123456789x123456789y1234";
         
-        PlayerTest player = new PlayerTest();
+        PlayerTest player = new PlayerTest();  
         player.setPlayerName(playerName24Char);
+        
         System.out.println("\nTest: Verifying 24 char names accepted");
         assertEquals("24 character name NOT accepted", playerName24Char, player.getPlayerName());
         
         
         player.setPlayerName(playerName25Char);
+        
         System.out.println("Test: Verifying 25 char names truncated\n");
         assertNotEquals("25 character name accepted (should truncate to 24", playerName25Char, player.getPlayerName());
         assertEquals("name different, but not truncated", playerName24Char, player.getPlayerName());
-        // 
         
     }
     
     // Test default name is '?'
+    
+    // Test spaces allowed between non-whitespace characters
 }
