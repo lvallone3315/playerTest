@@ -77,8 +77,8 @@ public class TestPlayerTest {
         player.setPlayerName(playerName);
         assertEquals("Bob NOT returned", playerName, player.getPlayerName());
         
-        // PlayerTest player2 = new PlayerTest("Nancy");
-        // assertEquals("Nancy NOT returned", "Nancy", player2.getPlayerName());
+        PlayerTest player2 = new PlayerTest("Nancy");
+        assertEquals("Nancy NOT returned", "Nancy", player2.getPlayerName());
     }
     
     // Next test names limited to 24 characters
@@ -93,10 +93,17 @@ public class TestPlayerTest {
         assertEquals("24 character name NOT accepted", playerName24Char, player.getPlayerName());
         
         
-        // player.setPlayerName(playerName25Char);
+        player.setPlayerName(playerName25Char);
         assertNotEquals("25 character name accepted (should truncate to 24", playerName25Char, player.getPlayerName());
         assertEquals("name different, but not truncated", playerName24Char, player.getPlayerName());
         // 
         
+    }
+    
+    // Test default name is '?'
+    @Test
+    public void playerTesterDefault() {
+        PlayerTest player = new PlayerTest();
+        assertEquals("Default plyaer name is not = ?", "?", player.getPlayerName());
     }
 }
