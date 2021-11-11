@@ -1,5 +1,7 @@
 /*
- * Test Driven Development Demo for a basic player class
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 package playertest;
 
@@ -12,10 +14,13 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author Lee
+ * @author User
  */
-public class TestPlayerTest {
-    
+public class ConstructorWithNameTest {
+
+    // TODO add test methods here. The name must begin with 'test'. For example:
+    // public void testHello() {}
+        
     /*
      *                    Player Class
      * Requirements
@@ -58,30 +63,4 @@ public class TestPlayerTest {
         System.out.println("Test: 2nd instance created, Nancy initialized & retrieved, as well as Bob\n");
         assertEquals("Nancy NOT returned", "Nancy", player2.getPlayerName());
     }
-    
-    // Next test names limited to 24 characters
-    //   verify 24 characters good, 25 characters truncated to 24
-    @Test
-    public void playerTester24Char() {
-        String playerName25Char = "123456789x123456789y12345";
-        String playerName24Char = "123456789x123456789y1234";
-        
-        PlayerTest player = new PlayerTest();  
-        player.setPlayerName(playerName24Char);
-        
-        System.out.println("\nTest: Verifying 24 char names accepted");
-        assertEquals("24 character name NOT accepted", playerName24Char, player.getPlayerName());
-        
-        
-        player.setPlayerName(playerName25Char);
-        
-        System.out.println("Test: Verifying 25 char names truncated\n");
-        assertNotEquals("25 character name accepted (should truncate to 24", playerName25Char, player.getPlayerName());
-        assertEquals("name different, but not truncated", playerName24Char, player.getPlayerName());
-        
-    }
-    
-    // Test default name is '?'
-    
-    // Test spaces allowed between non-whitespace characters
 }
