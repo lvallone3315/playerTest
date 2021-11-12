@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Demonstration of Test Driven Development
  */
 package playertest;
 
@@ -9,29 +7,36 @@ package playertest;
  *
  * @author Lee
  */
-public class PlayerTest {
-    
-    String playerName;
 
-    /**
-     * @param args the command line arguments
-     */
+  public class PlayerTest {
+      
+   String playerName;
+    
     public static void main(String[] args) {
-        // TODO code application logic here
+        ; // no need for any code here - run from JUnit tests
     }
     
-    PlayerTest() {}
+    PlayerTest () {
+        // null constructor
+        // playerName = "?"
+        this ("?");
+    }
     
-    PlayerTest(String name) {
+    PlayerTest (String name) {
         playerName = name;
     }
-    
+
     public void setPlayerName(String name) {
-        playerName = name;
+        if (name.length()> 24) {
+            playerName = name.substring(0,24);
+        }
+        else
+            playerName = name;
     }
     
     public String getPlayerName() {
         return playerName;
     }
-    
-}
+
+  }
+
