@@ -14,7 +14,7 @@ import static org.junit.Assert.*;
  *
  * @author Lee
  */
-public class FirstPlayerTest {
+public class CreateOnePlayer_GetSet_1 {
     
     /*
      *                    Player Class
@@ -34,7 +34,6 @@ public class FirstPlayerTest {
     
     // First test creating multiple instances & setting & retrieving names
     //   Create instance, store Bob in 1st instance, retrieve & verify Bob returned
-    //   Create 2nd instance, store Nancy, retrieve & verify Nancy returned
     @Test
     public void playerTester() {
         String playerName = "Bob";

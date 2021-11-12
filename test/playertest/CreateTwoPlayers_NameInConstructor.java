@@ -16,7 +16,7 @@ import static org.junit.Assert.*;
  *
  * @author User
  */
-public class ConstructorWithNameTest {
+public class CreateTwoPlayers_NameInConstructor {
 
     // TODO add test methods here. The name must begin with 'test'. For example:
     // public void testHello() {}
@@ -52,7 +52,7 @@ public class ConstructorWithNameTest {
     }
     
     // test creating multiple instances & initializing via constructor
-    //   Create Bob again
+    //   Create Bob again (reuse playerTester() )
     //   Create 2nd instance initialized to Nancy, retrieve & verify Nancy returned
     @Test
     public void playerTesterInitializedConstructor() {

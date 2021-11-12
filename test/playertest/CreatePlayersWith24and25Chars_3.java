@@ -14,7 +14,7 @@ import static org.junit.Assert.*;
  *
  * @author Lee
  */
-public class TestPlayerTest {
+public class CreatePlayersWith24and25Chars_3 {
     
     /*
      *                    Player Class
@@ -31,35 +31,8 @@ public class TestPlayerTest {
      *   Void setPlayerName(string) - sets player name
      *   String getPlayerName() - returns player name
     */
-    
-    // First test creating multiple instances & setting & retrieving names
-    //   Create instance, store Bob in 1st instance, retrieve & verify Bob returned
-    //   Create 2nd instance, store Nancy, retrieve & verify Nancy returned
-    @Test
-    public void playerTester() {
-        String playerName = "Bob";
-        
-        PlayerTest player = new PlayerTest();  
-        player.setPlayerName(playerName);
-        
-        System.out.println("Test: instance created, Bob set & retrieved");
-        assertEquals("Bob NOT returned", playerName, player.getPlayerName());
-    }
-    
-    // test creating multiple instances & initializing via constructor
-    //   Create Bob again
-    //   Create 2nd instance initialized to Nancy, retrieve & verify Nancy returned
-    @Test
-    public void playerTesterInitializedConstructor() {
-        playerTester();
-        
-        PlayerTest player2 = new PlayerTest("Nancy");
-        
-        System.out.println("Test: 2nd instance created, Nancy initialized & retrieved, as well as Bob\n");
-        assertEquals("Nancy NOT returned", "Nancy", player2.getPlayerName());
-    }
-    
-    // Next test names limited to 24 characters
+      
+    // Test names limited to 24 characters
     //   verify 24 characters good, 25 characters truncated to 24
     @Test
     public void playerTester24Char() {
